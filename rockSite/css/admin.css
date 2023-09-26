@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.title{
+    font-size: 125%;
+}
+.wrapper{
+   /* border: 1px solid black;*/
+    padding: 1%;
+    justify-content: center; 
+    width: 80%;
+    margin: 0 auto;
+}
+.text-center{
+    text-align: center;
+}
+
+.tbl-full{
+    width: 100%;
+}
+.container{
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border: solid black;
+    border-radius: 5%;
+    box-shadow: 10px 10px 5px rgb(63, 63, 63);
+    background-color: #c8e6ff;
+    
+}
+.login-title{
+    font-family: Montserrat, sans-serif;
+}
+
+.home-box{
+    border-style: solid;
+    box-shadow: 5px 5px 5px rgb(63, 63, 63);
+    border-radius: 4%;
+}
+.btn-homepage{
+    border: black solid 2px;
+    background-color: #68BBE3;
+    padding: 1%;
+    color: #2d3436;
+    text-decoration: none;
+    font-weight: lighter;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgb(63, 63, 63);
+}
+.btn-homepage:hover{
+    background-color: rgb(86, 180, 180);
+    box-shadow: none;
+}
+
+table tr th{
+    border-bottom: 1px solid black;
+    padding: 3%;
+    text-align: left;
+}
+table tr td{
+    padding: 1%;
+}
+.btn-primary{
+    border: black solid 2px;
+    background-color: #68BBE3;
+    padding: 1%;
+    color: #2d3436;
+    text-decoration: none;
+    font-weight: lighter;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgb(63, 63, 63);
+}
+.btn-primary:hover{
+    background-color: #56ade7;
+    box-shadow: none;
+}
+.btn-secondary{
+    background-color: #68BBE3;
+    margin-top: 2px;
+    padding: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+    color: #2d3436;
+    text-decoration: none;
+    font-weight: lighter;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgb(63, 63, 63);
+}
+.btn-secondary:hover{
+    background-color: #51b0df;
+    box-shadow: none;
+}
+.btn-third{ /*Remove buttons*/
+    background-color: #ff6b81;
+    margin-top: 2px;
+    padding: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+    color: #2d3436;
+    text-decoration: none;
+    font-weight: lighter;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgb(63, 63, 63);
+}
+.btn-third:hover{
+    background-color: #ff4575;
+    box-shadow: none;
+}
+
+/* CSS for Menu */
+.menu{ /* all sidebar stuff */
+    border-bottom: 1px solid gray;
+    height: 100%; 
+    width: 140px; 
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #124f94;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-self: center; 
+}
+.menu ul{
+    list-style-type: none;
+}
+.menu ul li{
+    display: inline;
+    padding: 1%;
+}
+.menu ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #b9ddf9;
+}
+
+.menu ul li a:hover :focus{
+    text-decoration: underline;
+}
+
+/* CSS for Main Content */
+.main-content{
+    margin-left: 140px;
+    background-color: white;
+    padding: 1rem;
+}
+.col-4{
+    width: 40%;
+    background-color: white;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+}
+
+/* CSS for Footer*/
+.footer{
+    margin-left: 140px;
+    padding: 1rem;
+    margin-top: 1rem;
+    flex-direction: column;
+    background-color: #124f94;
+    text-align: center;
+    color: #b9ddf9;
+}
+.footer a{
+    color: #b9ddf9;
+
+}
+.footer-bottom{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+/* CSS for Manage Product */
+
+.img-curve {
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px rgb(63, 63, 63);
+}
+

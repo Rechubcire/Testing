@@ -1,0 +1,15 @@
+C://xampp/php/php.ini:
+search for mail section and change these:
+    SMTP=smtp.gmail.com
+    smtp_port=587 
+    sendmail_from = peacelovedotsnoreply@gmail.com
+    sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"
+
+C://xampp/sendmail/sendmail.ini:
+    force_sender=peacelovedotsnoreply@gmail.com
+    auth_username=peacelovedotsnoreply@gmail.com
+    auth_password=duwnqlzgcvtkuvqd //i may have to make a new one, possible each device must have its own
+    error_logfile=error.log
+    debug_logfile=debug.log
+    smtp_server=smtp.gmail.com
+    smtp_port=587

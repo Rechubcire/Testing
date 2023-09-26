@@ -1,0 +1,285 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 05, 2023 at 04:23 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `rockbase`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about`
+--
+
+CREATE TABLE `about` (
+  `id` int(11) NOT NULL,
+  `about` varchar(5000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `about`
+--
+
+INSERT INTO `about` (`id`, `about`) VALUES
+(1, '<p>Rock and mandala painting with love and hope</p>\r\n<p>When the world fell apart in 2020, I began painting rocks and mandalas as stress relief and as a family activity with my daughters. It quickly became my favorite pastime (obsession??) when I have a few minutes - or hours!</p>\r\n<p>I love experimenting with shapes of stones, color combinations, and different tools, and have discovered different designs and colors “speak” to me at different times. The most important lesson I’ve learned from painting is to focus on intention, not expectation, and let the energy come. I believe nature and color are powerful forces in the world, and I want to share those forces through my art.</p>\r\n<p>Peace, love & blessings.</p>s');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `Id` int(11) NOT NULL,
+  `Username` varchar(255) NOT NULL,
+  `Password` varchar(255) NOT NULL,
+  `passwordLength` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`Id`, `Username`, `Password`, `passwordLength`) VALUES
+(1, 'admin', '5f4dcc3b5aa765d61d8327deb882cf99', 8);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `maillist`
+--
+
+CREATE TABLE `maillist` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `maillist`
+--
+
+INSERT INTO `maillist` (`id`, `email`) VALUES
+(1, 'cadenconde@gmail.com'),
+(15, 'chaddreemurr@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL,
+  `prod_id` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `customer_address` varchar(1000) NOT NULL,
+  `customer_email` varchar(255) NOT NULL,
+  `time` datetime NOT NULL DEFAULT current_timestamp(),
+  `customer_first` varchar(100) NOT NULL,
+  `customer_last` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `prod_id`, `status`, `customer_address`, `customer_email`, `time`, `customer_first`, `customer_last`) VALUES
+(56, 15, 'Pending', '1958 Spindletop Ln.  Dayton, OH 45458 United States', 'cadenconde@gmail.com', '2023-03-01 17:15:21', 'Caden', 'Conde'),
+(57, 20, 'Pending', '1958 Spindletop Ln.  Dayton, OH 45458 United States', 'cadenconde@gmail.com', '2023-03-01 17:21:51', 'Caden', 'Conde'),
+(58, 75, 'Pending', '1958 Spindletop Ln.  Dayton, OH 45458 United States', 'cadenconde@gmail.com', '2023-03-01 17:51:55', 'Caden', 'Conde'),
+(59, 77, 'Pending', '1958 Spindletop Ln.  Dayton, OH 45458 United States', 'cadenconde@gmail.com', '2023-03-02 16:29:20', 'Caden', 'Conde');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `ID` int(11) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Description` varchar(255) NOT NULL,
+  `imageFile` varchar(255) NOT NULL,
+  `Price` double NOT NULL,
+  `featured` tinyint(1) NOT NULL,
+  `sold` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`ID`, `Name`, `Description`, `imageFile`, `Price`, `featured`, `sold`) VALUES
+(13, 'rock', 'Mushroom', 'Rock7.png', 252, 0, 0),
+(15, 'rock2', 'Candle Holder', 'Rock5.png', 3.5, 0, 1),
+(20, 'rock3', 'Candle Holder', 'Rock8.png', 45, 0, 1),
+(75, 'Mushroom', 'Mushroom', 'shop_rock8.png', 50, 1, 1),
+(77, 'rainbow rocks', 'Misc', 'shop_rock7.png', 20, 1, 1),
+(78, 'Rainbow heart', 'Heart', 'Rock1.png', 19.99, 0, 0),
+(79, 'Ornament', 'Misc', 'shop_rock4.png', 15.99, 0, 0),
+(80, 'Heart and Rock', 'Heart', 'shop_rock2.png', 30, 0, 0),
+(81, '2 Mushrooms', 'Mushroom', 'shop_rock3.png', 20, 0, 0),
+(82, 'Candle Holder', 'Candle Holder', 'shop_rock5.png', 40, 0, 0),
+(83, 'Candle Holder', 'Candle Holder', 'shop_rock1.png', 35, 0, 0),
+(84, 'Ornaments', 'Misc', 'Rock4.png', 25, 0, 0),
+(85, 'Keychains', 'Keychain', 'shop_rock9.png', 12, 0, 0),
+(86, 'Heart', 'Heart', 'shop_rock6.png', 20, 0, 0),
+(87, 'Vase', 'Misc', 'shop_rock10.png', 50, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prod_types`
+--
+
+CREATE TABLE `prod_types` (
+  `id` int(11) NOT NULL,
+  `type` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `prod_types`
+--
+
+INSERT INTO `prod_types` (`id`, `type`) VALUES
+(1, 'Candle Holder'),
+(3, 'Heart'),
+(7, 'Keychain'),
+(10, 'Misc'),
+(15, 'Mushroom');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `promotions`
+--
+
+CREATE TABLE `promotions` (
+  `id` int(11) NOT NULL,
+  `category` varchar(100) NOT NULL,
+  `promo_text` varchar(1000) NOT NULL,
+  `percent_off` decimal(10,2) NOT NULL,
+  `featured` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `promotions`
+--
+
+INSERT INTO `promotions` (`id`, `category`, `promo_text`, `percent_off`, `featured`) VALUES
+(1, 'Mushroom', 'Mushrooms are 90% off!', '0.90', 0),
+(3, 'Candle Holder', 'Candle holders are 60% off for limited time!!!!', '0.60', 0),
+(7, 'Keychain', 'Keychains are on Sale!!', '0.50', 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `about`
+--
+ALTER TABLE `about`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `maillist`
+--
+ALTER TABLE `maillist`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `prod_types`
+--
+ALTER TABLE `prod_types`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `promotions`
+--
+ALTER TABLE `promotions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `about`
+--
+ALTER TABLE `about`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `maillist`
+--
+ALTER TABLE `maillist`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+
+--
+-- AUTO_INCREMENT for table `prod_types`
+--
+ALTER TABLE `prod_types`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `promotions`
+--
+ALTER TABLE `promotions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
